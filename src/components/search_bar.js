@@ -1,34 +1,37 @@
 import React, {Component} from 'react';
 
-class SearchBar extends Component{
+class SearchBar extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            term:''
+        this.state = {
+            term: ''
 
         };
         props.onSearchTermChange(this.state.term);
 
         //this.onInputChange=this.onInputChange.bind(this); (updating to the bound function)(returns a new function ref)
-       //this.onInputChange();
+        //this.onInputChange();
         // onChange{this.onInputChange};
-         }
+    }
+
 //control component
-    onInputChange(term){  //component level but calling at class level
+    onInputChange(term) {  //component level but calling at class level
         console.log(term);
-        this.setState({term:term});
+        this.setState({term: term});
         this.props.onSearchTermChange(term);
     }
 
-    render(){
-        return( //JSX(html inside js inside html)
-            <div>
-                <input value={this.state.term} onChange={(event)=>this.onInputChange(event.target.value)}/>
+    render() {
+        return ( //JSX(html inside js inside html)
+            <div className="search-bar">
+                <input value={this.state.term} onChange={(event) => this.onInputChange(event.target.value)}/>
+                <i className="fa fa-search" aria-hidden="true"></i>
 
             </div>
         );
     }
 
 }
+
 export default SearchBar;

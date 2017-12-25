@@ -8,13 +8,13 @@ const VideoDetail =(props) =>{
         );
     }
 console.log(props.video.id.videoId);
-    const url='https://wwwyoutube.com/embed/'+props.video.id.videoId;//string interpolation
+    const url='https://www.youtube.com/embed/'+props.video.id.videoId;//string interpolation
     return(
-        <div >
-            <div>
-                <iframe src={url}></iframe>
+        <div className="video-detail col-md-8" >
+            <div className="embed-responsive embed-responsive-16by9">
+                <iframe className="embed-responsive-item" src={url}></iframe>
             </div>
-            <div>
+            <div className="details">
                 <h3>{props.video.snippet.title}</h3>
                 <p>{props.video.snippet.description}</p>
             </div>

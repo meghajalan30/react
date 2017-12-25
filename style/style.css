@@ -1,4 +1,8 @@
+.fill {
+    background: #f2f2f2;
+}
 .search-bar {
+
     margin: 20px;
     text-align: center;
 }
@@ -25,7 +29,9 @@
 .list-group-item:hover {
     background-color: #eee;
 }
-
+.details{
+    background:white;
+}
 
 
 
